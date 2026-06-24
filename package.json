@@ -1,0 +1,12 @@
+{
+  "name": "haines-shore-excursions",
+  "private": true,
+  "scripts": {
+    "build": "python3 scripts/build-haines-site.py",
+    "deploy": "wrangler deploy",
+    "preview": "python3 -m http.server 8903"
+  },
+  "devDependencies": {
+    "wrangler": "^4.94.0"
+  }
+}
