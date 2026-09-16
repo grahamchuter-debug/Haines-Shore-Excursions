@@ -1,16 +1,21 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
   "name": "haines-shore-excursions",
-  "compatibility_date": "2026-06-24",
-  "observability": { "enabled": true },
+  "main": "https-redirect.js",
+  "compatibility_date": "2026-09-15",
+  "observability": {
+    "enabled": true
+  },
   "assets": {
-    "directory": ".",
-    "html_handling": "auto-trailing-slash"
+    "directory": "./public",
+    "binding": "ASSETS",
+    "html_handling": "force-trailing-slash",
+    "run_worker_first": true,
+    "not_found_handling": "404-page"
   },
   "routes": [
     {
-      "pattern": "hainesshoreexcursions.com",
-      "custom_domain": true
+      "pattern": "hainesshoreexcursions.com/*",
+      "zone_name": "hainesshoreexcursions.com"
     }
   ]
 }
